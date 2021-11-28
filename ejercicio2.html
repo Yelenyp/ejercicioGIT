@@ -1,0 +1,18 @@
+<script>
+    var numeros = ["unacadena",3,9,1,10,500,1,10,"a",true];  
+    for (var i = 0; i < numeros.length; i++) {
+        console.log(typeof numeros[i]);
+        //console.log(numeros[i]);
+        if(typeof numeros[i] === "number")
+                        {
+                            //console.log("es numero")
+                           
+                        } else{
+                            numeros.splice(i,1);
+    
+                            //console.log(numeros);
+                        }            
+    
+    }
+    console.log(numeros);
+    </script>
