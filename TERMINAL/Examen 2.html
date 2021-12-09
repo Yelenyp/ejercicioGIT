@@ -1,0 +1,179 @@
+Examen 2
+
+Punto 1
+<script>
+for(int i = 1; i<=5; i++)
+     System.out.println((int)(Math.random()*6 + 1));
+</script>  
+
+Punto 2
+<script>
+int resto;
+int numero1 = 21;
+int numero2 = 3;
+
+resto = numero1%numero2;
+
+if (resto==0)
+  System.out.println(numero1 + " es múltiplo de " + numero2);
+else
+  System.out.println(numero1 + " NO es múltiplo de " + numero2);
+</script>
+
+
+ punto 4
+ <script>
+    var numeros = ["unacadena",23,5,1,34,56,98,"a",true];  
+    for (var i = 0; i < numeros.length; i++) {
+        console.log(typeof numeros[i]);
+        //console.log(numeros[i]);
+        if(typeof numeros[i] === "number")
+                        {
+                            //console.log("es numero")
+                           
+                        } else{
+                            numeros.splice(i,1);
+    
+                            //console.log(numeros);
+                        }            
+    
+    }
+    console.log(numeros);
+    </script>
+
+    punto 5
+    <script>
+        class Persona
+        {
+            constructor(nombre, apellido, edad){
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.edad = edad;
+            }
+            getDetalles (){
+               console.log(this.nombre + " " + this.apellido + " " + this.edad);
+            }
+        }
+        var persona = new Persona('Juan', 'Perez',55);
+        persona.getDetalles();
+    
+        class Jugador extends  Persona
+        {
+            constructor (nombre, apellido, edad, posicion){
+                super(nombre, apellido, edad);
+                this.posicion = posicion;
+            }
+            getDetalles(){
+                console.log(this.nombre + " " + this.apellido + " " + this.edad + " " +this.posicion);
+            }
+    
+        }
+    
+        
+    
+        class Entrenador extends Persona
+        {
+            constructor(nombre, apellido, edad, añosExperiencia, idFederacion){
+                super(nombre, apellido, edad);
+                this.añosExperiencia = añosExperiencia;
+                
+                //console.log(idFederacion);
+    
+                if(idFederacion==undefined){
+                    this.idFederacion = 10000 + Math.floor(Math.random() * (99999 - 10000));    
+                }else{
+                    this.idFederacion = idFederacion;
+                }
+                
+                
+            }
+            getDetalles(){
+                console.log(this.nombre + " " + this.apellido + " " + this.edad + " " + this.añosExperiencia + " " + this.idFederacion);
+                
+            }
+        }
+    
+        
+        
+    
+        class Equipo {
+            constructor(_entrenador, _jugadores){
+                this.entrenador = new Entrenador(_entrenador.nombre, _entrenador.apellido, _entrenador.edad, _entrenador.añosExperiencia);
+                //console.log(_entrenador.edad);
+                this.jugadores = _jugadores;
+            }
+    
+            getDetalles(){
+                //_entrenador.getDetalles();
+    
+                console.log("Detalles Entrenador: " + this.entrenador.nombre + " " + this.entrenador.apellido + " " + this.entrenador.edad + " " + this.entrenador.añosExperiencia + " " + this.entrenador.idFederacion);
+                
+                this.jugadores.forEach(v => {
+                    v.getDetalles();
+                    
+                });
+                
+    
+                
+            }
+        }
+    
+        var entrenador1 = new Entrenador('juan', 'Moreno', 43, 15);
+    
+        var jugador1 = new Jugador('Pedro', 'Sanchez', 43, 'Delantero');
+        var jugador2 = new Jugador('Yeleny', 'Piedrahita', 40, 'Portero');
+        var jugador3 = new Jugador('Andres', 'Guerrero', 30, 'Medio Campo');
+        var jugador4 = new Jugador('Mario', 'Espitia', 25, 'Defensa');
+    
+        jugador1.getDetalles();
+    
+        var jugadores = [];
+        jugadores.push(jugador1);
+        jugadores.push(jugador2);
+        jugadores.push(jugador3);
+        jugadores.push(jugador4);
+    
+        var equipo = new Equipo (entrenador1, jugadores);
+        equipo.getDetalles();
+        
+    
+    </script>
+
+    Ejercicio bonus -
+    <script>
+    #include <stdio.h>
+        #include <ctype.h>
+         
+        int main(int argc, char const *argv[])
+        {
+            char cadena[] = "Hola mundo, esto va a ser convertido a mayuscula. parzibyte.me";
+            printf("Cadena original: %s\n", cadena);
+         
+            // Convertir cada char a mayúscula
+            // usando toupper
+            for (int indice = 0; cadena[indice] != '\0'; ++indice){
+                cadena[indice] = toupper(cadena[indice]);
+            }
+            printf("Cadena despues de ser convertida: %s\n", cadena);
+            return 0;
+        }
+    </script>
+
+    Punto 3
+    <script>
+    const letra = 'o';
+const palabra = 'Hola Como estas'
+function contarLetra(palabra, letra){
+    let contar = 0;
+    for (let i = 0; i < palabra.length; i++)
+    {
+        if(palabra.charAt(i) == letra){
+            contar += 1;
+        }
+    }
+    return contar;
+}
+
+const result = contarLetra(palabra, letra);
+console.log(result);
+</script>
